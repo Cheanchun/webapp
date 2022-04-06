@@ -1,4 +1,5 @@
 <template>
+
     <div class="stock">
         <myheader :title="title"></myheader>
         <mt-navbar v-model="selected" class="tab" fixed>
@@ -1222,20 +1223,22 @@
 </template>
 <script>
 import myheader from './header.vue'
+import banner from "./banner";
 
 export default {
   name: 'stategy',
   data() {
     return {
       // title: '君弘策略'
-      selected: 'zs',
+      selected: 'main',
       title: '行情'
     };
   },
   computed: {},
   watch: {},
   components: {
-    myheader
+    myheader,
+    banner
   }
 };
 

@@ -3,6 +3,7 @@
   </mt-header>
 </template>
 <script>
+  import banner from "./banner";
 export default {
   name: 'header',
   props: {
@@ -12,7 +13,10 @@ export default {
     return {};
   },
   computed: {},
-  watch: {}
+  watch: {},
+  components:{
+    banner
+  }
 };
 
 </script>

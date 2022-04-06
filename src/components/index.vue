@@ -48,7 +48,7 @@ import stock from './stock.vue'
 import strategy from './strategy.vue'
 import myChose from './myChose.vue'
 import choseStock from './choseStock.vue'
-
+import banner from "./banner";
 export default {
     name: 'index',
     created: function() { //通过获取hash值来确定当前选中的id即selected的值
@@ -70,7 +70,8 @@ export default {
         strategy,
         myChose,
         stock,
-        choseStock
+        choseStock,
+        banner
     },
     watch: {
         selected: function(val, oldVal) {
