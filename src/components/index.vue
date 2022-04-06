@@ -3,19 +3,24 @@
         <mt-tabbar v-model="selected" fixed>
             <mt-tab-item id="strategy">
                 <img slot="icon" src="../assets/strategy.svg" v-if="selected !='strategy'">
-                <img slot="icon" src="../assets/strategy-Selected.svg" v-if="selected=='strategy'"> 策略
-            </mt-tab-item>
-            <mt-tab-item id="myChose">
-                <img slot="icon" src="../assets/Optional.svg" v-if="selected !='myChose'">
-                <img slot="icon" src="../assets/Optional-Selected.svg" v-if="selected=='myChose'"> 自选
+                <img slot="icon" src="../assets/strategy-Selected.svg" v-if="selected=='strategy'"> 首页
             </mt-tab-item>
             <mt-tab-item id="info">
                 <img slot="icon" src="../assets/Quotation.svg" v-if="selected !='info'">
                 <img slot="icon" src="../assets/Quotation-Selected.svg" v-if="selected=='info'">行情
             </mt-tab-item>
+                    <mt-tab-item id="monit">
+                <img slot="icon" src="../assets/Quotation.svg" v-if="selected !='monit'">
+                <img slot="icon" src="../assets/Quotation-Selected.svg" v-if="selected=='monit'">监控警告
+            </mt-tab-item>
+            <mt-tab-item id="myChose">
+                <img slot="icon" src="../assets/Optional.svg" v-if="selected !='myChose'">
+                <img slot="icon" src="../assets/Optional-Selected.svg" v-if="selected=='myChose'"> 消息
+            </mt-tab-item>
+
             <mt-tab-item id="chose">
                 <img slot="icon" src="../assets/Choice.svg" v-if="selected !='chose'">
-                <img slot="icon" src="../assets/Choice-Selected.svg" v-if="selected=='chose'">选股
+                <img slot="icon" src="../assets/Choice-Selected.svg" v-if="selected=='chose'">我的
             </mt-tab-item>
         </mt-tabbar>
         <mt-tab-container v-model="selected">
@@ -31,6 +36,9 @@
             </mt-tab-container-item>
             <mt-tab-container-item id="chose">
                 <choseStock></choseStock>
+            </mt-tab-container-item>
+                      <mt-tab-container-item id="chose">
+                <strategy></strategy>
             </mt-tab-container-item>
         </mt-tab-container>
     </div>
@@ -50,7 +58,7 @@ export default {
         } else {
             this.selected = "strategy"; //默认selected的值为strategy
         };
-        
+
     },
     data() {
         return {
@@ -82,6 +90,10 @@ export default {
                     break;
                 case 'chose':
                     location.hash = "chose";
+                    // console.log(this.selected)
+                    break;
+                case 'monit':
+                    location.hash = "monit";
                     // console.log(this.selected)
                     break;
             }

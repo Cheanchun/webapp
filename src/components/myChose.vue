@@ -316,7 +316,7 @@ export default {
                 // console.log("newDate", new Date());
                 if (this.selfStock.length > 0) { //若用户没有添加自选股，则不请求数据
                     this.forDate();
-                    //在开盘时间段内才调用定时器，刷新最新价和涨幅数据 
+                    //在开盘时间段内才调用定时器，刷新最新价和涨幅数据
                     if ((startTimeAm < new Date() && new Date() < endTimeAm) || (startTimePm < new Date() && new Date() < endTimePm)) {
                         that.interval = setInterval(that.forDate, 5000);
                     }
